@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="main.css">
     <style>
         div {
+            z-index: 2;
             margin: 20px; 
             border: 1px solid;
             border-radius: 7px;
@@ -16,6 +17,20 @@
             height: 120px;
             overflow-y: auto;
             overflow-x: hidden;
+            position: relative;
+            background: linear-gradient(rgb(170, 122, 170), rgb(75, 236, 190));
+        }
+        .second {
+            z-index: 1;
+            left: 380px;
+            top: 120px;
+            position: fixed;
+        }
+        .second:hover {
+            z-index: 3;
+            left: 380px;
+            top: 120px;
+            position: fixed;
         }
     </style>
 </head>
@@ -35,7 +50,7 @@
             бы, ерунда. Но, скажу вам по секрету, всё это важно.
         </div>
 
-        <div>
+        <div class="second">
             Во второй главе я подробно рассказываю о том, откуда взялись акции и корпорации, чтобы вы поняли базовую идею 
             организации современной большой компании – типа Apple или Google. Как было у римлян, у генуэзских купцов и у английской
              королевы, кто кормил гусей, кто устраивал туры в Тай и кто кого облапошил.
