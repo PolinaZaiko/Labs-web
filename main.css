@@ -30,7 +30,11 @@ footer {
     font-style: italic; 
     text-align: right;
     transition: 300ms;
-}
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    }  
 
 footer:hover {
     background-image: linear-gradient(to left, rgb(169, 70, 244), lightblue, blue);
