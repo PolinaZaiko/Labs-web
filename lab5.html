@@ -13,6 +13,10 @@
             let result = a + b;
             alert("Сумма " + a + " и " + b + " равна " + result);
         }
+        function showAuthor() {
+            let autor = 'Автор страницы:\nЗаико Полина Алексеевна\nВсе в порядке!'; 
+            alert(autor);
+        }
 
     </script>
     <style>
@@ -32,16 +36,16 @@
 </head>
 
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer onclick="showAuthor()">
         &copy; Заико Полина, ФБИ-14, 2 курс, 2023  
     </footer>
 </body>
