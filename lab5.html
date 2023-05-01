@@ -45,7 +45,7 @@
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
             let result = a * b;
-            alert("Произведение " + a + " и " + b + " равна " + result); 
+            alert("Произведение " + a + " и " + b + " равно " + result); 
         }
 
         function showDel() {
@@ -54,8 +54,23 @@
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
             let result = a / b;
-            alert("Деление " + a + " и " + b + " равна " + result); 
+            alert("Деление " + a + " на " + b + " равно " + result); 
         }
+
+        function ShowSumProduct(){ 
+            let inputA = document.getElementById('numberApple'); 
+            let inputO = document.getElementById('numberOrange'); 
+            let inputG= document.getElementById('numberBanan'); 
+            let inputD = document.getElementById('numberKiwi'); 
+            let Apple = parseInt(inputA.value); 
+            let Orange= parseInt(inputO.value); 
+            let Banan= parseInt(inputG.value); 
+            let kiwi= parseInt(inputD.value); 
+            let result = (Apple * 100) + (Orange * 150) + (Banan * 110) + (kiwi * 30); 
+
+            let output = document.getElementById('itog'); 
+            output.innerHTML = 'Итоговая сумма: ' + result + ' рублей.'; 
+            }
     </script>
     <style>
         .message {
@@ -76,6 +91,26 @@
             width: 300px;
             height: 40px;
         }
+
+        .Shop { 
+            margin: 5px; 
+            border: 2px solid; 
+            height: 260px; 
+            width: 260px; 
+            text-align: left; 
+            padding: 2px; 
+            font-size: 12pt; 
+            padding: 5px; 
+            } 
+
+        .korzina { 
+            margin: 7px; 
+            text-align: center; 
+            padding: 3px; 
+            font-size: 21pt; 
+            font-weight: bold; 
+            }
+
     </style>
 </head>
 
@@ -102,6 +137,18 @@
         </div>
 
         <div id="output"></div>
+
+        <div class="Shop"> 
+            <div class="korzina">Корзина товаров</div> 
+            <label>Яблоки (100 рублей/штука) <div><input type="number" value="0" id="numberApple"></label><br></div> 
+            <label>Апельсины (150 рублей/штука)<div><input type="number" value="0" id="numberOrange"></label><br></div> 
+            <label>Бананы (110 рублей/штука) <div><input type="number" value="0" id="numberBanan"></label><br></div> 
+            <label>Киви (30 рублей/штука) <div><input type="number" value="0" id="numberKiwi"></label><br></div> 
+            <input type="button" value="Рассчитать" onclick="ShowSumProduct()"> 
+            <div id="itog">Итоговая сумма: </div> 
+        </div>
+
+        
     </main>
 
     <footer onclick="showAuthor()">
