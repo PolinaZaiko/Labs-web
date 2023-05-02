@@ -67,11 +67,16 @@
             let Banan= parseInt(inputG.value); 
             let kiwi= parseInt(inputD.value); 
             let result = (Apple * 100) + (Orange * 150) + (Banan * 110) + (kiwi * 30); 
-
             let output = document.getElementById('itog'); 
             output.innerHTML = 'Итоговая сумма: ' + result + ' рублей.'; 
-            }
+        }
+        
+         function removekrugi(number) { 
+            let del = document.getElementById(number) 
+            del.style.opacity = '0' 
+        }
     </script>
+    
     <style>
         .message {
             cursor: pointer;
@@ -101,7 +106,7 @@
             padding: 2px; 
             font-size: 12pt; 
             padding: 5px; 
-            } 
+        } 
 
         .korzina { 
             margin: 7px; 
@@ -109,7 +114,61 @@
             padding: 3px; 
             font-size: 21pt; 
             font-weight: bold; 
-            }
+        }
+
+        .krugi div { 
+            display: inline-block; 
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%; 
+            text-align: center; 
+            font-size: 24px; 
+            line-height: 100px; 
+            margin-right: 20px; 
+            color: #fff; 
+            font-weight: bold; 
+            margin-top: 30px; 
+        } 
+
+        .krug1 { 
+            background-color: #ff0000 
+        } 
+
+        .krug2 { 
+            background-color: #ffcc00; 
+        } 
+
+        .krug3 { 
+            background-color: #d900ff; 
+        } 
+
+        .krug4 { 
+            background-color: #0d00ff; 
+        } 
+
+        .krug5 { 
+            background-color: #ff8800; 
+        } 
+
+        .krug6 { 
+            background-color: #00ff1a; 
+        } 
+
+        .krug7 { 
+            background-color: #00eeff; 
+        } 
+
+        .krug8 { 
+            background-color: #009688; 
+        } 
+
+        .krug9 { 
+            background-color: #2e0f75; 
+        } 
+
+        .krug10 { 
+            background-color: #ff0099;
+        }
 
     </style>
 </head>
@@ -146,6 +205,19 @@
             <label>Киви (30 рублей/штука) <div><input type="number" value="0" id="numberKiwi"></label><br></div> 
             <input type="button" value="Рассчитать" onclick="ShowSumProduct()"> 
             <div id="itog">Итоговая сумма: </div> 
+        </div>
+
+        <div class="krugi"> 
+            <div class="krug1" id="1" onclick="removekrugi('1')">1</div> 
+            <div class="krug2" id="2" onclick="removekrugi('2')">2</div> 
+            <div class="krug3" id="3" onclick="removekrugi('3')">3</div> 
+            <div class="krug4" id="4" onclick="removekrugi('4')">4</div> 
+            <div class="krug5" id="5" onclick="removekrugi('5')">5</div> 
+            <div class="krug6" id="6" onclick="removekrugi('6')">6</div> 
+            <div class="krug7" id="7" onclick="removekrugi('7')">7</div> 
+            <div class="krug8" id="8" onclick="removekrugi('8')">8</div> 
+            <div class="krug9" id="9" onclick="removekrugi('9')">9</div> 
+            <div class="krug10" id="10" onclick="removekrugi('10')">10</div> 
         </div>
 
         
