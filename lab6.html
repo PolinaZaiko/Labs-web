@@ -39,7 +39,6 @@
         if (100<userNumber || userNumber<1) {
             message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
         }
-        
     }
 
     function again(params) {
@@ -63,6 +62,69 @@
         screens[1].style.display = "none";
         screens[0].style.display = "block";
     }
+
+    function changeColor(div) {
+        if(div.style.backgroundColor == "yellow") {
+            div.style.backgroundColor = "red";
+            document.getElementById('color-name').innerHTML = "красный";
+        }
+        else if(div.style.backgroundColor == "red") {
+            div.style.backgroundColor = "black";
+            document.getElementById('color-name').innerHTML = "черный";
+        }
+        else if(div.style.backgroundColor == "black") {
+            div.style.backgroundColor = "green";
+            document.getElementById('color-name').innerHTML = "зеленый";
+        }
+        else if(div.style.backgroundColor == "green") {
+            div.style.backgroundColor = "white";
+            document.getElementById('color-name').innerHTML = "белый";
+        }
+        else if(div.style.backgroundColor == "white") {
+            div.style.backgroundColor = "orange";
+            document.getElementById('color-name').innerHTML = "оранжевый";
+        }
+        else if(div.style.backgroundColor == "orange") {
+            div.style.backgroundColor = "purple";
+            document.getElementById('color-name').innerHTML = "фиолетовый";
+        }
+        else {
+            div.style.backgroundColor = "yellow";
+            document.getElementById('color-name').innerHTML = "желтый";
+        }
+    }
+    
+    function changeColor2(div) {
+        if(div.style.color == "black") {
+            div.style.color = "yellow";
+            document.getElementById('color-name2').innerHTML = "желтый";
+        }
+        else if(div.style.color == "yellow") {
+            div.style.color = "red";
+            document.getElementById('color-name2').innerHTML = "красный";
+        }
+        else if(div.style.color == "red") {
+            div.style.color = "white";
+            document.getElementById('color-name2').innerHTML = "белый";
+        }
+        else if(div.style.color == "white") {
+            div.style.color = "green";
+            document.getElementById('color-name2').innerHTML = "зеленый";
+        }
+        else if(div.style.color == "green") {
+            div.style.color = "purple";
+            document.getElementById('color-name2').innerHTML = "фиолетовый";
+        }
+        else if(div.style.color == "purple") {
+            div.style.color = "orange";
+            document.getElementById('color-name2').innerHTML = "оранжевый";
+        }
+        else {
+            div.style.color = "black";
+            document.getElementById('color-name2').innerHTML = "черный";
+        }
+    }
+
 </script>
 
 <style>
@@ -85,6 +147,21 @@
         padding: 15px;
         background-color: white;
     }
+
+    .color {
+        background-color: yellow;
+        border: 3px solid;
+        border-radius: 4px;
+        width: 250px;
+        height: auto;
+        margin: 35px auto;
+        text-align: center;
+        padding: 15px;
+        font-weight: bold;
+        color: black;
+        border-color: dimgrey;
+    }
+
 </style>
 
 <body>
@@ -140,8 +217,13 @@
                     <li>когда число будет угадано, будет предложено сыграть еще раз</li>
                     <li>чтобы сыграть еще раз нажмите на кнопку "Сыграть еще раз"</li>
                 </ol>
-
             </div>
+        </div>
+
+        <div class="color" ondblclick="changeColor(this), changeColor2(this)">
+            Цвет фона: <span id="color-name">желтый</span><br>
+            Цвет текста: <span id="color-name2">черный</span><br>
+            Сделайте двойной щелчок, чтобы сменить
         </div>
     </main>
 
