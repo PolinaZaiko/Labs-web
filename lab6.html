@@ -125,6 +125,21 @@
         }
     }
 
+    function Prig(div) {
+        if(div.style.left == '0' + 'px'){
+                div.style.left = '1400'+ 'px';
+                div.style.transform = "rotate(4turn)";
+            }
+            else if (div.style.left=='1400' + 'px') {
+                div.style.left='0' + 'px';
+                div.style.transform = "rotate(-4turn)";
+            }
+            else {
+                div.style.left = '1400'+ 'px';
+                div.style.transform = "rotate(4turn)";
+            }
+        }
+
 </script>
 
 <style>
@@ -149,18 +164,39 @@
     }
 
     .color {
+        cursor: pointer;
         background-color: yellow;
         border: 3px solid;
         border-radius: 4px;
         width: 250px;
         height: auto;
-        margin: 35px auto;
+        margin: auto;
         text-align: center;
         padding: 15px;
         font-weight: bold;
         color: black;
         border-color: dimgrey;
     }
+
+    .block {
+        cursor: pointer;
+        background-color: rgb(0, 255, 234);
+        border: 1px solid;
+        border-radius: 6px;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        padding: 20px;
+        margin-top: 10px;
+        left: 0px;
+        font-weight: bold;
+        color: rgb(10, 47, 82);
+        border-color: rgb(238, 0, 255);
+        position: relative;
+        line-height: 150px;
+        transform: rotate(0);
+        transition: 5s;
+        }
 
 </style>
 
@@ -225,6 +261,12 @@
             Цвет текста: <span id="color-name2">черный</span><br>
             Сделайте двойной щелчок, чтобы сменить
         </div>
+
+
+        <div class="block" onclick="Prig(this)">
+            щелкни меня 
+        </div>
+
     </main>
 
     <footer>
