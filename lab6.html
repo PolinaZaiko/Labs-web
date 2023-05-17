@@ -127,30 +127,58 @@
 
     function Prig(div) {
         if(div.style.left == '0' + 'px'){
-                div.style.left = '1400'+ 'px';
-                div.style.transform = "rotate(4turn)";
-            }
-            else if (div.style.left=='1400' + 'px') {
-                div.style.left='0' + 'px';
-                div.style.transform = "rotate(-4turn)";
-            }
-            else {
-                div.style.left = '1400'+ 'px';
-                div.style.transform = "rotate(4turn)";
-            }
+            div.style.left = '1400'+ 'px';
+            div.style.transform = "rotate(4turn)";
         }
+        else if (div.style.left=='1400' + 'px') {
+            div.style.left='0' + 'px';
+            div.style.transform = "rotate(-4turn)";
+        }
+        else {
+            div.style.left = '1400'+ 'px';
+            div.style.transform = "rotate(4turn)";
+        }
+    }
 
-        function WidthBlocks(){
-            let blocks = document.getElementById('blocksWidth');
-            NowWidth = parseInt(blocks.offsetWidth);
-            NewWidth = NowWidth + 50;
-            if (NewWidth < 1000){
-                blocks.style.width = NewWidth + 'px';
-            }
-            else {
-                blocks.style.width = 100 + 'px';
-            }
+    function WidthBlocks(){
+        let blocks = document.getElementById('blocksWidth');
+        NowWidth = parseInt(blocks.offsetWidth);
+        NewWidth = NowWidth + 50;
+        if (NewWidth < 1000){
+            blocks.style.width = NewWidth + 'px';
         }
+        else {
+             blocks.style.width = 100 + 'px';
+        }
+    }
+
+    function filter(clothes) {
+        let color = document.getElementById("wear-color").value;
+        let type = document.getElementById("wear-type").value;
+        let wear = document.getElementById("wear");
+
+        if(color == "Красный" && type == "Футболка") {
+            wear.src = "https://niceplaza.ru/wp-content/uploads/2018/10/3301525_e-4.jpg";
+        } else if (color == 'Белый' && type == 'Футболка') {
+            wear.src = 'https://img.freepik.com/free-photo/basic-white-tee-women-s-apparel-rear-view_53876-108033.jpg';
+        } else if (color == 'Черный' && type == 'Футболка') {
+            wear.src = 'https://media.gq.com/photos/5e6944f74d6be70008ac16c2/master/w_2000,h_1333,c_limit/Uniqlo-U-crew-neck-short-sleeve-T-shirt.jpgg';
+        } else if (color == 'Красный' && type == 'Поло') {
+            wear.src = 'http://vester2013.ru/upload/iblock/1bc/rubashka_polo_krasnyy.jpg';
+        } else if (color == 'Белый' && type == 'Поло') {
+            wear.src = 'https://www.professionalsport.ru/spree/products/000/139/236/original/irstpolcm6a100.jpg?1565859641';
+        } else if (color == 'Черный' && type == 'Поло') {
+            wear.src = 'https://a.d-cd.net/GEAAAgKibOA-960.jpg';
+        } else if (color == 'Красный' && type == 'Майка') {
+            wear.src = 'https://loloclo.ru/upload/iblock/75e/75ed59c1860e5836bb3b83c2092ac11e.jpg';
+        } else if (color == 'Белый' && type == 'Майка') {
+            wear.src = 'https://cdn2.chikiriki.club/files/ba/ba095d52f80811ea83017c8bca00012f.jpg';
+        } else if (color == 'Черный' && type == 'Майка') {
+            wear.src = 'https://images-eu.ssl-images-amazon.com/images/I/31wWKT89JVL._UL1000_.jpg';
+        } else {
+            wear.src = '';
+        }
+    }
 
 </script>
 
@@ -208,7 +236,7 @@
         line-height: 150px;
         transform: rotate(0);
         transition: 5s;
-        }
+    }
 
     .block2 {
         color: rgb(10, 47, 82);
@@ -223,7 +251,22 @@
         left: 0px;
         line-height: 100px;
         cursor: pointer;
-        }
+    }
+
+    .clothes{
+        margin-top: 20px;            
+        border: 1px solid;
+        border-radius: 3px;
+        color: black;
+        border-color: black;
+        width: 300px;
+    }
+
+    #wear {
+        width: 200px;
+        height: auto; 
+        margin-top: 10px; 
+    }
 
 </style>
 
@@ -298,6 +341,25 @@
             Щёлкни меня
         </div>
 
+        <div class="clothes">
+            Цвет одежды: 
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+
+            Тип одежды: 
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter(this)">ОК</button><br>
+
+            <img id="wear" src="">
+        </div>
     </main>
 
     <footer>
