@@ -52,11 +52,11 @@
         function createkrugi() {
             let numkrugi = document.getElementById("numkrugi").value;
             let container = document.getElementById("container");
-            container.innerHTML = ""; // очищаем контейнер перед созданием новых кругов
+            container.innerHTML = "";
             for (let i = numkrugi; i > 0; i--) {
                 let krug = document.createElement("div");
                 krug.className = "krugi";
-                krug.style.backgroundColor = i % 2 == 0 ? "green" : "red"; // красим чётные круги в зелёный, нечётные в красный
+                krug.style.backgroundColor = i % 2 == 0 ? "green" : "red";
                 krug.innerHTML = i;
                 container.appendChild(krug);
             }
@@ -70,10 +70,43 @@
                 str.appendChild(str2);
             }   
         }
-                 
+
+        function createTable() {
+            let znach = [7.485, 7.515, 7.435, 7.53, 7.57, 7.51, 7.565, 7.66, 7.67, 7.93]; 
+            let data = [30.05, 29.05, 26.05, 25.05, 24.05, 23.05, 22.05, 19.05, 18.05, 17.05];
+            let table = document.getElementById('table');
+            for (let i = 0; i < znach.length; i++) {
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                td1.innerHTML = data[i];
+                tr.appendChild(td1);
+                let td2 = document.createElement('td');
+                td2.innerHTML = znach[i];
+                tr.appendChild(td2);
+                let td3 = document.createElement('td');
+                td3.innerHTML = znach[i] - znach[i-1];
+                tr.appendChild(td3);
+                table.appendChild(tr);
+            }
+
+            let suma = 0;
+            for(let i = 0; i < znach.length; i++) {
+                suma = suma + znach[i];
+            }
+            let avg = suma / znach.length;
+            document.getElementById('detail1').innerHTML = "Среднее значение: " + avg;
+            let max = Math.max(...znach);
+            document.getElementById("detail2").innerHTML = "Максимальное значение: " + max;
+            let min = Math.min(...znach);
+            document.getElementById("detail3").innerHTML = "Минимальное значение: " + min;
+        }          
     </script>
 
     <style>
+        main {
+            margin-bottom: 200px;
+        }
+        
         .krugi {
             width: 50px;
             height: 50px;
@@ -119,9 +152,16 @@
             <div id="str"></div>
         </p>
 
+        <p>
+            <button onclick="createTable()">Курс акций Фармсинтез</button>
+            <table border="1" id="table"></table>
+            <div id="detail1"></div>
+            <div id="detail2"></div>
+            <div id="detail3"></div>
+        </p>
     </main>
 
-    <footer>
+    <footer style="position: fixed;">
         &copy; Заико Полина, ФБИ-14, 2 курс, 2023  
     </footer>
 </body>
