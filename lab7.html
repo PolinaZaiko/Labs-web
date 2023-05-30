@@ -48,7 +48,35 @@
                 transparent.appendChild(tranbl);
             }   
         }   
+
+        function createkrugi() {
+            let numkrugi = document.getElementById("numkrugi").value;
+            let container = document.getElementById("container");
+            container.innerHTML = ""; // очищаем контейнер перед созданием новых кругов
+            for (let i = numkrugi; i > 0; i--) {
+                let krug = document.createElement("div");
+                krug.className = "krugi";
+                krug.style.backgroundColor = i % 2 == 0 ? "green" : "red"; // красим чётные круги в зелёный, нечётные в красный
+                krug.innerHTML = i;
+                container.appendChild(krug);
+            }
+        }
+
     </script>
+
+    <style>
+        .krugi {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            line-height: 50px;
+            margin: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,6 +94,13 @@
 
         <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
         <div id='transparent-blocks'></div>
+
+    <p>
+        <input type='number' value="5" placeholder="Введите число кругов" id="numkrugi"><br>
+        <button onclick="createkrugi()">красное / зеленое</button>
+        <div id="container"></div>
+    </p>
+
     </main>
 
     <footer>
