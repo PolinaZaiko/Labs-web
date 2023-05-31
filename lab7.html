@@ -84,7 +84,7 @@
                 td2.innerHTML = znach[i];
                 tr.appendChild(td2);
                 let td3 = document.createElement('td');
-                td3.innerHTML = znach[i] - znach[i-1];
+                td3.innerHTML = (znach[i] - znach[i-1]).toFixed(3);
                 tr.appendChild(td3);
                 table.appendChild(tr);
             }
@@ -93,7 +93,7 @@
             for(let i = 0; i < znach.length; i++) {
                 suma = suma + znach[i];
             }
-            let avg = suma / znach.length;
+            let avg = (suma / znach.length).toFixed(3);
             document.getElementById('detail1').innerHTML = "Среднее значение: " + avg;
             let max = Math.max(...znach);
             document.getElementById("detail2").innerHTML = "Максимальное значение: " + max;
