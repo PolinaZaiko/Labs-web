@@ -15,3 +15,12 @@ function showDate() {
     let out6 = document.getElementById("current-date6");
     out6.innerHTML = "Дата и время для аргентинской локали: " + today.toLocaleDateString("es-AR");
 }
+
+function showDaysCount() {
+    let today = new Date();
+    let inputDate = document.querySelector("input[type=date]");
+    let birthday = new Date(inputDate.value);
+    let daysCount = (today - birthday)/1000/60/60/24;
+    daysCount=Math.floor(daysCount)
+    document.getElementById('data').innerHTML = "Количество дней с даты рождения: " + daysCount;
+}
