@@ -24,3 +24,11 @@ function showDaysCount() {
     daysCount=Math.floor(daysCount)
     document.getElementById('data').innerHTML = "Количество дней с даты рождения: " + daysCount;
 }
+
+function showDaysCountZero() {
+    let today = new Date();
+    let inputDate = document.querySelector("input[type=date]");
+    inputDate.value = "";
+    daysCount = 0;
+    document.getElementById('data').innerHTML = "Количество дней с даты рождения: " + daysCount;
+}
